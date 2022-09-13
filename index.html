@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Font Awesome CSN-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Weather Cats</title>
-</head>
-<body>
+
+<html id="html">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Weather Cats</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Font Awesome CSN-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" href="main.css">
+        
+    </head>
+    
+    <body>
+        <header id="header">
+            WAKE UP & SMILE
+        </header>
+        
     <!--Search for city form-->
     <form id="searchBar" class="searchBar">
         <label for="search">Enter City</label>
@@ -19,8 +29,43 @@
     </form>
     <!--Current weather will populate in this section from JS-->
     <section class="currentWeather" id="currentWeather"></section>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="./assets/css/script.js"></script>
-</body>
+    
+        <div class="tile is-ancestor">
+            <div class="tile is-4 is-vertical is-parent">
+              <div class="tile is-child box" id="Spotify-Box">
+                <p class="title">Spotify</p>
+                <div class="container">        
+                    <div class="row">
+                        <div class="col-sm-6 px-0">
+                                                                              
+                        </div>
+                        <div class="offset-md-1 col-sm-4" id="song-detail">                
+                        </div>
+                
+                    </div>   
+                </div>
+              </div>
+              <div class="tile is-child box">
+                <p class="title">Photos of Cats to Brighten your Day</p>
+                <div onchange="showBreedImage(value)" name="breed_selector" id="breed_selector">
+                </div>
+                <div class="maincontent">
+                    <div id="grid" class="imgrid"></div>
+                   </div>
+              </div>
+            </div>
+            <div class="tile is-parent">
+              <div class="tile is-child box">
+                <p class="title">The Weather for today</p>
+                
+    
+              </div>
+            </div>
+          </div>
+          
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="./assets/css/script.js"></script>
+        <script src="app.js" async defer></script>
+    </body>
+    
 </html>
