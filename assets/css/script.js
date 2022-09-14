@@ -1,3 +1,4 @@
+// Weather Api
 const apiKey = "ff77349cf3ff082fc8d44b4a9ebb3767";
 let city = 'Tucson';
 
