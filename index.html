@@ -20,21 +20,17 @@
         </header>
     
         <div id="tile-box" class="tile is-ancestor">
-            <div class="tile is-4 is-vertical is-parent">
-              <div class="tile is-child box" id="Spotify-Box">
-                <p class="title">Inspirational Quote</p>
+          <div class="tile is-4 is-vertical is-parent">
+            <div id="inspo" class="tile is-child box">
+              <p class="title">Inspirational Quote</p>
                 <div class="container">        
-                    <div class="row">
-                        <div class="col-sm-6 px-0">
-                                                                              
-                        </div>
-                        <div class="offset-md-1 col-sm-4" id="song-detail">                
-                        </div>
-                
-                    </div>   
-                </div>
+                  <div class="row">
+                  <div class="col-sm-6 px-0"></div>
+                  <div class="offset-md-1 col-sm-4" id="song-detail"></div>
+                </div>   
               </div>
-              <div class="tile is-child box">
+            </div>
+              <div id="weather" class="tile is-child box">
                 <p class="title">Weather Forecast</p>
                 <form id="searchBar" class="searchBar">
                   <label for="search">Enter City</label>
@@ -48,7 +44,7 @@
               </div>
             </div>
             <div class="tile is-parent">
-              <div class="tile is-child box">
+              <div id="cat-image" class="tile is-child box">
                   <p class="title">Photos of Cats to Brighten your Day</p>
                 <div onchange="showBreedImage(value)" name="breed_selector" id="breed_selector">
                 </div>
