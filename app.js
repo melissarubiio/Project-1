@@ -27,17 +27,3 @@ imagesData.map(function(imageData) {
 .catch(function(error) {
  console.log(error);
 });
-
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'a4e863d63dmsh1c8d1d6573360cdp1f5cf1jsn3f96064ad730',
-		'X-RapidAPI-Host': 'healthruwords.p.rapidapi.com'
-	}
-};
-
-fetch('https://healthruwords.p.rapidapi.com/v1/quotes/?t=Wisdom&maxR=1&size=medium&id=731', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-
