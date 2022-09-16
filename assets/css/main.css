@@ -6,8 +6,8 @@
     font-size: 84px;
     color: black;
     height: 100px;
-    margin-bottom: 100px;
-    margin-top: 60px;
+    margin-bottom: 90px;
+    margin-top: 50px;
     font-weight: bold;
 }
 
@@ -84,4 +84,23 @@ header,
     height: 35px;
     width: 35px;
     background-color: rgb(229, 177, 221);
+ }
+
+ #footer {
+   display: block;
+   text-align: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   text-decoration: none;
+   color: rgba(0, 0, 0, 0.476);
+   word-spacing: 3px;
+   font-size: 15px;
+ }
+ .email{
+   color: rgba(0, 0, 0, 0.517);
+
+ }
+
+ #links{
+   text-decoration: none;
  }
