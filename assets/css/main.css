@@ -68,7 +68,10 @@ header,
  }
  
  .title{
-    font-size: 40px;
+
+    font-size: 24px solid black;
+    
+
  }
  
  #search{

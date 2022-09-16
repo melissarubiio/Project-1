@@ -19,15 +19,21 @@
             WEATHER CATS
         </header>
     
-        <div id="tile-boxes" class="tile is-ancestor">
-          <div class="tile is-4 is-vertical is-parent">
-            <div id="inspo" class="tile is-child box">
-              <p class="title">Inspirational Quote</p>
-                <div class="container">        
+      <div id="tile-boxes" class="tile is-ancestor">
+         <div class="tile is-4 is-vertical is-parent">
+          <div id="inspo" class="tile is-child box">
+            <p class="title">Inspirational Quote</p>
+            <div class="quote-box">
+              <p id="quote">Quote goes here...</p>
+              <small id="author">Author</small>
+            </div>
+            <button id="btn">Get Quote</button>
+
+              <div class="container">        
                   <div class="row">
                   <div class="col-sm-6 px-0"></div>
                   <div class="offset-md-1 col-sm-4" id="song-detail"></div>
-                </div>   
+                  </div>   
               </div>
             </div>
               <div id="weather" class="tile is-child box">
@@ -61,6 +67,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="./assets/css/script.js"></script>
         <script src="app.js" async defer></script>
+
     </body>
     
 
