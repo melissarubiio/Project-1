@@ -74,6 +74,12 @@ header,
 
  }
  
+ #btn{
+   height: 30px;
+   width: 130px;
+   background-color: rgb(229, 177, 221);
+}
+
  #search{
     height: 35px;
     width: 160px;
