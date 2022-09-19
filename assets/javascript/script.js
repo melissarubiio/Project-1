@@ -1,8 +1,9 @@
 // Weather Api
-const apiKey = "ff77349cf3ff082fc8d44b4a9ebb3767";
-let city = 'Tucson';
+const apiKey = "429887647bf3ecdf39b717ebe5271ff1";
+let cityInput = $('#city');
+let search = document.querySelector('#searchButton');
 
-function getApi() {
+function getApi(city) {
     var requestUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
 
     fetch(requestUrl)
@@ -12,17 +13,13 @@ function getApi() {
         .then(function (data) {
             var lat = data[0].lat;
             var lon = data[0].lon;
-            var city = data[0].name
+            var cityName = data[0].name
 
-            console.log(data);
-            console.log('lat', lat);
-            console.log('lon', lon);
-            console.log('name', city);
-            getWeather(lat, lon, city);
+            getWeather(lat, lon, cityName);
     });
 }
 
-function getWeather(lat, lon, city) {
+function getWeather(lat, lon, cityName) {
     var requestUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 
     fetch(requestUrl)
@@ -30,7 +27,6 @@ function getWeather(lat, lon, city) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
 
             let temp = data.main.temp;
             let humidity = data.main.humidity;
@@ -39,17 +35,36 @@ function getWeather(lat, lon, city) {
             document.getElementById('currentWeather').innerHTML =
 
             `<div class='current'>
-                <h3>${city}</h3>
-                <p>Temp: <span>${temp}</span></p>
+                <h3>${cityName}</h3>
+                <p>Temp: <span>${temp}°F</span></p>
                 <p>Humidity: <span>${humidity}</span></p> 
-                <p>Wind Speed: <span>${windSpeed}</span></p>
+                <p>Wind Speed: <span>${windSpeed}mph</span></p>
             </div>`
         })
 }
 
-getApi();
+//Render last city searched
+function getStoredCity() {
+    
+    if (localStorage.getItem("city")) {
+        getApi(localStorage.getItem('city'))
+    }
+}
 
+search.addEventListener('click', function(event) {
+    event.preventDefault();
 
+    let city = document.querySelector('#city').value;
+
+    if (city === "") {
+        return;
+    } else {
+    localStorage.setItem('city', city);
+    getApi(city);
+    }
+});
+
+//Quote
 const quote = document.querySelector("#quote");
 const author = document.querySelector("#author");
 const btn = document.querySelector("#btn");
@@ -65,4 +80,4 @@ function getQuote() {
     })
 }
 
-
+getStoredCity();
